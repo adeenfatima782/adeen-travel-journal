@@ -572,3 +572,251 @@ h1, h2, h3, h4, .font-display {
   stroke-linecap: round;
   fill: none;
 }
+/* =========================================
+   TRAVEL NAVBAR
+========================================= */
+
+.travel-navbar {
+  background: #faf8f1;
+  border-bottom: 1px solid rgba(120, 100, 70, 0.15);
+}
+
+.travel-brand {
+  text-decoration: none;
+  color: #29251f !important;
+}
+
+.brand-name {
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.brand-subtitle {
+  display: block;
+  margin-top: 3px;
+  color: #a9782a;
+  font-family: monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Desktop links */
+
+.travel-navbar .nav-link {
+  color: #5f5a52;
+  font-size: 0.92rem;
+  transition: all 0.25s ease;
+}
+
+.travel-navbar .nav-link:hover {
+  color: #a9782a;
+}
+
+.travel-navbar .nav-link.active {
+  color: #a9782a;
+}
+
+/* Social icons */
+
+.social-icon {
+  color: #625d55;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.social-icon:hover {
+  color: #a9782a;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   MOBILE SIDE MENU
+========================================= */
+
+.mobile-nav {
+  width: 310px !important;
+  max-width: 85vw;
+  background: #faf8f1;
+  border-left: 1px solid rgba(120, 100, 70, 0.18);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: 1050;
+  box-shadow: -12px 0 40px -8px rgba(28, 27, 26, 0.35);
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav.mobile-nav-open {
+  transform: translateX(0);
+}
+
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 27, 26, 0.55);
+  z-index: 1049;
+}
+
+.mobile-nav-header {
+  padding: 24px 24px 18px;
+  border-bottom: 1px solid rgba(120, 100, 70, 0.12);
+}
+
+.mobile-brand-name {
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #29251f;
+}
+
+.mobile-brand-subtitle {
+  margin-top: 4px;
+  color: #a9782a;
+  font-family: monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.mobile-nav .offcanvas-body {
+  padding: 22px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Navigation links */
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 13px 14px;
+
+  color: #555149;
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  font-size: 0.94rem;
+
+  transition: all 0.25s ease;
+}
+
+.mobile-nav-link:hover {
+  background: #f1ead9;
+  color: #a9782a;
+}
+
+.mobile-nav-link.active {
+  background: #eee4ce;
+  color: #a9782a;
+  font-weight: 600;
+}
+
+.mobile-nav-icon {
+  width: 24px;
+  font-size: 1rem;
+}
+
+.mobile-arrow {
+  margin-left: auto;
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
+
+/* =========================================
+   MOBILE SOCIAL
+========================================= */
+
+.mobile-social-section {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(120, 100, 70, 0.15);
+}
+
+.mobile-social-title {
+  margin-bottom: 15px;
+  color: #a9782a;
+  font-family: monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+}
+
+.mobile-social-icons {
+  display: flex;
+  gap: 18px;
+}
+
+.mobile-social-icon {
+  color: #5f5a52;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.mobile-social-icon:hover {
+  color: #a9782a;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   MOBILE ONLY
+========================================= */
+
+@media (max-width: 991.98px) {
+
+  .travel-navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .navbar-toggler {
+    padding: 7px 9px;
+    border: 1px solid rgba(120, 100, 70, 0.25) !important;
+    border-radius: 8px;
+    background: #faf8f1;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none !important;
+  }
+
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 992px) {
+
+  .mobile-nav {
+    display: none !important;
+  }
+
+}
