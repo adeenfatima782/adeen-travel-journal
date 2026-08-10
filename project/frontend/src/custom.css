@@ -1,0 +1,574 @@
+:root {
+  --ink: #1c1b1a;
+  --sand: #faf6ee;
+  --sand-deep: #f1e9d8;
+  --gold: #d98e2b;
+  --gold-dark: #b06f1a;
+  --teal: #1f4b4c;
+  --teal-light: #2e6a6b;
+  --stone: #6b6560;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--sand);
+  background-image: radial-gradient(circle, rgba(28, 27, 26, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--gold);
+  color: #fff;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-signature {
+  font-family: "Dancing Script", cursive;
+}
+
+.text-gold { color: var(--gold); }
+.text-gold-dark { color: var(--gold-dark); }
+.text-teal { color: var(--teal); }
+.text-stone { color: var(--stone); }
+.bg-sand { background-color: var(--sand); }
+.bg-sand-deep { background-color: var(--sand-deep); }
+.bg-teal { background-color: var(--teal); }
+.border-ink-soft { border-color: rgba(28, 27, 26, 0.12) !important; }
+
+/* ---------- Buttons ---------- */
+.btn-gold {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.65rem 1.6rem;
+}
+.btn-gold:hover {
+  background-color: var(--gold-dark);
+  border-color: var(--gold-dark);
+  color: #fff;
+}
+.btn-outline-sand {
+  border: 1.5px solid rgba(250, 246, 238, 0.7);
+  color: var(--sand);
+  border-radius: 999px;
+  padding: 0.65rem 1.6rem;
+  font-weight: 600;
+}
+.btn-outline-sand:hover {
+  background-color: rgba(250, 246, 238, 0.15);
+  color: var(--sand);
+}
+.btn-outline-ink {
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+}
+.btn-outline-ink:hover {
+  background-color: var(--ink);
+  color: var(--sand);
+}
+
+/* ---------- Navbar ---------- */
+.navbar-custom {
+  background-color: rgba(250, 246, 238, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(28, 27, 26, 0.1);
+}
+.navbar-custom .nav-link {
+  color: var(--stone);
+  font-weight: 500;
+  position: relative;
+}
+.navbar-custom .nav-link.active,
+.navbar-custom .nav-link:hover {
+  color: var(--gold-dark);
+}
+.brand-mark {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.social-icon {
+  color: var(--stone);
+  font-size: 1.15rem;
+  transition: color 0.2s ease;
+}
+.social-icon:hover {
+  color: var(--gold-dark);
+}
+
+/* ---------- Links ---------- */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+.link-underline:hover {
+  background-size: 100% 1.5px;
+  color: inherit;
+}
+
+/* ---------- Hero ---------- */
+.hero-section {
+  position: relative;
+  min-height: 82vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.hero-section img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(28,27,26,0.85), rgba(28,27,26,0.15) 60%);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 4rem;
+  color: var(--sand);
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* ---------- Polaroid photo card ---------- */
+.polaroid {
+  background: #fff;
+  padding: 10px 10px 40px;
+  box-shadow: 0 10px 25px -8px rgba(28, 27, 26, 0.35);
+  transform: rotate(var(--tilt, -2deg));
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.polaroid:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 0 18px 35px -10px rgba(28, 27, 26, 0.45);
+}
+.polaroid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+.polaroid-caption {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--stone);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* ---------- Passport-stamp badge ---------- */
+.stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  transform: rotate(-4deg);
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.85rem;
+}
+.stamp-badge::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px dashed currentColor;
+  border-radius: 999px;
+  opacity: 0.5;
+}
+.stamp-travel { color: var(--teal); }
+.stamp-photography { color: var(--gold-dark); }
+.stamp-gallery { color: var(--ink); }
+
+/* ---------- Post card (Bootstrap card override) ---------- */
+.post-card {
+  border: none;
+  background: transparent;
+}
+.post-card .card-img-wrap {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  aspect-ratio: 4 / 3;
+}
+.post-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.post-card:hover img {
+  transform: scale(1.06);
+}
+.post-card .card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+.post-card:hover .card-title {
+  color: var(--gold-dark);
+}
+
+/* ---------- Route divider (map-style dashed line) ---------- */
+.route-divider {
+  height: 2px;
+  background-image: linear-gradient(to right, transparent 50%, rgba(28,27,26,0.2) 50%);
+  background-size: 14px 2px;
+  background-repeat: repeat-x;
+  border: none;
+}
+
+/* ---------- Masonry gallery (Explore page) ---------- */
+.masonry {
+  column-count: 1;
+  column-gap: 1rem;
+}
+@media (min-width: 576px) { .masonry { column-count: 2; } }
+@media (min-width: 992px) { .masonry { column-count: 3; } }
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+.masonry-photo-wrap {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.masonry-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.masonry-item:hover img {
+  transform: scale(1.05);
+}
+.masonry-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: linear-gradient(to top, rgba(28,27,26,0.85), transparent);
+  color: var(--sand);
+  padding: 1rem 0.9rem 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.masonry-item:hover .masonry-caption {
+  opacity: 1;
+}
+
+/* ---------- Newsletter ---------- */
+.newsletter-box {
+  background-color: var(--teal);
+  color: var(--sand);
+  border-radius: 1.25rem;
+  padding: 3rem 2rem;
+}
+.newsletter-box input {
+  border-radius: 999px;
+  border: none;
+  padding: 0.75rem 1.25rem;
+}
+
+/* ---------- Form fields ---------- */
+.form-control-custom {
+  border: 1px solid rgba(28,27,26,0.15);
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 0.75rem 1rem;
+}
+.form-control-custom:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 0.2rem rgba(217, 142, 43, 0.2);
+  outline: none;
+}
+
+/* ---------- Footer ---------- */
+.footer-custom {
+  border-top: 1px solid rgba(28, 27, 26, 0.1);
+  margin-top: 6rem;
+}
+
+/* ---------- Travel Journal: diary / passport theme ---------- */
+.journal-paper {
+  position: relative;
+  background-color: #fbf7ee;
+  background-image:
+    linear-gradient(rgba(31, 75, 76, 0.07) 1px, transparent 1px);
+  background-size: 100% 2.1rem;
+}
+
+.washi-label {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  transform: rotate(-2deg);
+  box-shadow: 0 4px 10px -4px rgba(28,27,26,0.35);
+  opacity: 0.92;
+}
+
+.diary-pin {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e8b74a, var(--gold-dark));
+  box-shadow: 0 3px 6px rgba(28,27,26,0.4);
+  z-index: 2;
+}
+
+.postcard-frame {
+  position: relative;
+  background: #fffdf8;
+  border: 1px solid rgba(28,27,26,0.12);
+  box-shadow: 0 14px 34px -14px rgba(28,27,26,0.35);
+}
+.postcard-frame::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px dashed rgba(28,27,26,0.18);
+  pointer-events: none;
+}
+.postmark {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  width: 4.2rem;
+  height: 4.2rem;
+  border: 2px solid var(--teal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(8deg);
+  color: var(--teal);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  text-align: center;
+  line-height: 1.15;
+  background: rgba(255,255,255,0.7);
+}
+
+.diary-entry-card {
+  background: #fffdf8;
+  border-radius: 2px;
+  box-shadow: 0 10px 22px -10px rgba(28,27,26,0.3);
+  position: relative;
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.diary-entry-card:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 0 18px 32px -12px rgba(28,27,26,0.4);
+}
+
+.timeline-rail {
+  position: absolute;
+  left: 1.75rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background-image: linear-gradient(to bottom, rgba(31,75,76,0.35) 60%, transparent 0%);
+  background-size: 2px 10px;
+  background-repeat: repeat-y;
+}
+.timeline-year-marker {
+  font-family: var(--font-signature);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   Travel Journal — Field Diary theme (scoped to .journal-theme only)
+   A deliberately different visual language from the Blog/Gallery card grid:
+   trail-map timeline, postmarks, polaroid photos, handwritten annotations.
+   ========================================================================== */
+
+.journal-theme {
+  --diary-line: rgba(31, 75, 76, 0.35);
+}
+
+.paper-card {
+  background: var(--sand);
+  border: 1px solid rgba(28, 27, 26, 0.1);
+  border-radius: 6px;
+  position: relative;
+  box-shadow: 0 1px 0 rgba(28, 27, 26, 0.04), 0 10px 24px -16px rgba(28, 27, 26, 0.35);
+}
+.paper-card::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed var(--diary-line);
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.postmark {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  border-radius: 50%;
+  border: 2px solid var(--teal);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  font-family: var(--font-mono);
+  transform: rotate(-8deg);
+  background: var(--sand);
+}
+.postmark::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--teal);
+  border-radius: 50%;
+  opacity: 0.45;
+}
+.postmark-value {
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+.postmark-label {
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.polaroid {
+  background: #fff;
+  padding: 0.5rem 0.5rem 1.3rem;
+  box-shadow: 0 14px 26px -14px rgba(28, 27, 26, 0.4);
+  position: relative;
+}
+.polaroid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.polaroid-cap {
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  color: var(--ink);
+  font-size: 1.1rem;
+  margin-top: 0.3rem;
+  line-height: 1.1;
+}
+.tape-strip {
+  position: absolute;
+  top: -0.55rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 3.6rem;
+  height: 1.15rem;
+  background: rgba(217, 142, 43, 0.32);
+  border: 1px solid rgba(217, 142, 43, 0.5);
+}
+
+.diary-quote {
+  font-family: "Dancing Script", cursive;
+  color: var(--teal);
+  line-height: 1.35;
+}
+
+.washi-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--sand-deep);
+  border: 1px dashed var(--gold-dark);
+  padding: 0.4rem 0.85rem;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink);
+}
+
+.stitch-divider {
+  border: none;
+  border-top: 2px dashed var(--diary-line);
+  margin: 3rem 0;
+}
+
+.luggage-tag {
+  background: var(--sand-deep);
+  border: 1px solid rgba(28, 27, 26, 0.12);
+  border-radius: 4px;
+  position: relative;
+  padding: 0.85rem 0.75rem 0.75rem;
+}
+.luggage-tag::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  border: 2px solid var(--teal);
+  background: var(--sand);
+}
+
+.trail-path {
+  stroke: var(--teal);
+  stroke-width: 2.5;
+  stroke-dasharray: 1 9;
+  stroke-linecap: round;
+  fill: none;
+}
