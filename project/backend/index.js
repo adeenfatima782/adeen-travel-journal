@@ -21,6 +21,10 @@ connectToMongo();
 const app = express();
 const port = process.env.PORT || 5000;
 
+app.set('trust proxy', 1);
+
+
+
 app.use(helmet({ crossOriginResourcePolicy: false })); // Security headers — disable crossOriginResourcePolicy so frontend can load /uploads images
 
 // In production, allow only FRONTEND_URL (from .env); allow all origins in local development (undefined origin also allows same-origin/Postman)

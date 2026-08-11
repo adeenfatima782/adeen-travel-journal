@@ -7,7 +7,8 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "create-admin": "node seed/createAdmin.js",
-    "import-demo-content": "node seed/importDemoContent.js"
+    "import-demo-content": "node seed/importDemoContent.js",
+    "fix-upload-urls": "node seed/fixUploadUrls.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
